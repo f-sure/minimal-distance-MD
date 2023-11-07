@@ -11,10 +11,10 @@ from schrodinger.application.desmond.packages import analysis             #Neede
 #############
 
 #File of the *.cms file containing the MD trajectories
-filepath = "//opt/schrodinger2021-2/PROJECTS/ENaC/ENaC+S3969_new/ENaC_S3969_new.prj/MD_desmond_glide-dock_XP_S3969_beta_thumb_2/MD_desmond_glide-dock_XP_S3969_beta_thumb_2-out.cms"
+filepath = "placeholder - enter filepath here"
 
 #File where the results shall be saved
-resultspath = "//opt/schrodinger2021-2/PROJECTS/_scripts/dist_beta_gamma"
+resultspath = "placeholder - enter filepath here"
 
 #Specification of chains and residues of both interaction partners 
 chain_name_1 = "B"  #referes to beta ENaC in our MD simulations 
