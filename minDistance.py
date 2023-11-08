@@ -27,23 +27,23 @@ with open((resultspath+".csv"), "w") as file:
 
 
 for betaRes in range(start_chain_1, stop_chain_1):
-  com = analysis.Com(msys_model, cms_model, asl='(chain.name '+chain_name_1+') AND (res.num '+str(betaRes)+')')
-  com2 = analysis.Com(msys_model, cms_model, asl='(chain.name '+chain_name_2+') AND (res.num '+str(start_chain_2)+')')
+	com = analysis.Com(msys_model, cms_model, asl='(chain.name '+chain_name_1+') AND (res.num '+str(betaRes)+')')
+	com2 = analysis.Com(msys_model, cms_model, asl='(chain.name '+chain_name_2+') AND (res.num '+str(start_chain_2)+')')
 	distanceAnalyzer = analysis.Distance(msys_model, cms_model, com, com2)
-  results = analysis.analyze(tr, distanceAnalyzer)
+	results = analysis.analyze(tr, distanceAnalyzer)
     
 	for gammaRes in range(start_chain_2 + 1, stop_chain_2):
 		try:
 			com2 = analysis.Com(msys_model, cms_model, asl='(chain.name '+chain_name_2+') AND (res.num '+str(gammaRes)+')')
 			distanceAnalyzer = analysis.Distance(msys_model, cms_model, com, com2)
 			temp_results = analysis.analyze(tr, distanceAnalyzer)
-
-      for i, res in enumerate(results):
+			
+			for i, res in enumerate(results):
 				if(res > temp_results[i]):
 					results[i] = temp_results[i]
         
 		except: 
-            print("- EXCEPTION: "+str(gammaRes))
+			print("- EXCEPTION: "+str(gammaRes))
 
 
 	with open((resultspath+".csv"), "a") as file:
